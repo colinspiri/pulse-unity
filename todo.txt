@@ -1,0 +1,50 @@
+TODO
+
+use sprite shape to make jagged terrain
+
+spacebar to dash
+
+lander damage and health
+-big collisions -> more damage
+-game over if health == 0
+
+sonic waves that push lander and asteroids
+
+atmospheric wind that pushes lander
+
+screen shake on collision (and dash)
+
+structure of scenes
+-title screen
+-intro/lore scene
+-asteroid field scene - reduced gravity, more asteroids and comets and focus on evasion
+-planet landing scene - more gravity, more sonic waves and wind and focus on precision
+-upgrade scene
+
+random terrain generation
+
+random asteroid re-generation when offscreen
+
+random asteroid shapes
+-asteroids chunk off and decrease in size naturally
+
+UI elements
+-altitude
+-speed
+-lander hologram visualization
+  -current health/damaged parts
+  -fuel here
+
+-damaged parts of the lander affect movement? (rotation, thrust, inertia, mass?)
+
+red flashing light on lander when low health
+
+detect safe landing (on lander's legs) and SUCCESS!
+
+small dash when first turning on thruster
+
+thruster flame (and dash a lot) applies a force to asteroids and pushes them away
+
+make music!
+
+make SFX!
