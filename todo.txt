@@ -48,3 +48,7 @@ thruster flame (and dash a lot) applies a force to asteroids and pushes them awa
 make music!
 
 make SFX!
+
+camera frames the action (incoming asteroids, waves, where the lander is facing, etc.)
+
+camera will zoom out and stop moving when reaching the terrain (the terrain is always the bottom of the camera's vision)
