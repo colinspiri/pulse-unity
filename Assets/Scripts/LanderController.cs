@@ -10,6 +10,7 @@ public class LanderController : MonoBehaviour
     public Rigidbody2D rb;
 
     private bool thrusting;
+    private float timeThrusting;
     private int rotateDir;
 
     public Animator animator;
@@ -28,7 +29,14 @@ public class LanderController : MonoBehaviour
     {
       // Input
       float vertical = Input.GetAxis("Vertical");
-      thrusting = (vertical > 0);
+      if (vertical > 0) {
+        if (!thrusting) {
+          thrusting = true;
+          timeThrusting = 0f;
+        }
+        else timeThrusting += Time.deltaTime;
+      }
+      else thrusting = false;
 
       float horizontal = Input.GetAxis("Horizontal");
       if(horizontal > 0) rotateDir = -1;
@@ -45,7 +53,8 @@ public class LanderController : MonoBehaviour
     void FixedUpdate() {
       // Movement
       if(thrusting) {
-        rb.AddForce(thrustPower * transform.up);
+        float power = (timeThrusting == 0f) ? 10 * thrustPower : thrustPower;
+        rb.AddForce(power * transform.up);
       }
       rb.AddTorque(rotateSpeed * rotateDir);
     }
